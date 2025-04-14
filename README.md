@@ -1,48 +1,67 @@
-# Astro Starter Kit: Basics
+# Numari - Gestión Inteligente para Nutricionistas
 
-```sh
-pnpm create astro@latest -- --template basics
+## 🍏 Descripción
+
+**Numari** es una solución SaaS diseñada para nutricionistas, que automatiza la
+gestión clínica y administrativa. Con Numari puedes:
+
+-   Crear **planes nutricionales personalizados en segundos**.
+-   Realizar **seguimiento automatizado** del progreso de tus pacientes.
+-   Mejorar **la experiencia consulta-paciente** con herramientas digitales
+    avanzadas.
+
+## ✨ Características Clave
+
+### 📋 Gestión de Consultas
+
+| Función            | Beneficio                                                            |
+| ------------------ | -------------------------------------------------------------------- |
+| Agenda inteligente | Reduce hasta un 70% las inasistencias con recordatorios automáticos. |
+| Fichas digitales   | Acceso rápido y seguro al historial desde cualquier dispositivo.     |
+
+### 🥗 Elaboración de Planes Nutricionales
+
+```astro
+<PlanNutricional
+    calorias={2000}
+    macros="40-30-30"
+    paciente="María González"
+/>
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+-   **Dashboard de Seguimiento**: Visualiza el progreso de tus pacientes en
+    tiempo real.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Cómo Funciona
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+1. **Registro**: Crea tu cuenta profesional como nutricionista.
+2. **Configuración**: Personaliza plantillas y parámetros según tus necesidades.
+3. **Implementación**: Comienza a gestionar pacientes de manera eficiente.
 
-## 🚀 Project Structure
+## 🛠 Stack Tecnológico
 
-Inside of your Astro project, you'll see the following folders and files:
+-   **Frontend**: Astro + Tailwind CSS (Componentes reutilizables como
+    `SectionImgLeft`).
+-   **Backend**: API optimizada para cálculos nutricionales y gestión de datos.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```javascript
+Numari.createPlan({
+    patient: 'Carlos Méndez',
+    dietType: 'Keto',
+    calories: 1800
+})
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🌟 Beneficios
 
-## 🧞 Commands
+-   **Ahorro de tiempo**: Reduce entre 5 y 7 horas semanales en tareas
+    administrativas.
+-   **Precisión**: Minimiza errores en cálculos nutricionales.
+-   **Adherencia**: Mejora la adherencia al tratamiento en un 40%.
 
-All commands are run from the root of the project, from a terminal:
+## 📬 Contacto
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+¿Tienes preguntas? ¡Contáctanos!
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+-   📧 Correo: [soporte@numari.com](mailto:soporte@numari.com)
+-   🌐 Sitio web: [www.numari.com](https://www.numari.com)
