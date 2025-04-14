@@ -1,0 +1,16 @@
+---
+export interface Props {
+    img: string;
+    bg?: string;
+
+}
+const { bg = "", img} = Astro.props;
+---
+
+<section class={`${bg} flex flex-col md:flex-row items-center justify-between px-4 md:px-44 py-6 md:py-24`}>
+    <div class="w-full md:w-1/2 space-y-8">
+        <slot />
+    </div>
+    <img src={img} alt={`foto ${img}`} class="w-full md:w-1/2 max-w-md aspect-square object-cover rounded-xl" />
+</section>
+
