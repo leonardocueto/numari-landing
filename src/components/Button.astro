@@ -1,0 +1,16 @@
+---
+export interface Props {
+    type?: "primary" | "secondary"
+    text: string;
+    disabled?: boolean
+
+}
+const { type = 'primary', text, disabled  = false } = Astro.props;
+
+const baseClasses = "rounded-lg py-2.5 px-5 hover:cursor-pointer transition-colors ";
+const primaryClasses = "text-white bg-blue-600 hover:bg-blue-500 disabled:bg-blue-300";
+const secondaryClasses = "border border-gray-200 bg-white text-gray-900  hover:bg-gray-50 disabled:opacity-50";
+
+---
+
+<button class={`${baseClasses} ${type === 'primary' ? primaryClasses : secondaryClasses}`} disabled={disabled}>{text}</button>
