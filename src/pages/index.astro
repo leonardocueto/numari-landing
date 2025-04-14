@@ -1,11 +1,151 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
+import SectionImgRight from '../components/SectionImgRight.astro'
+import SectionImgLeft from '../components/SectionImgLeft.astro'
+import Button from '../components/Button.astro'
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const nutriOptions = [
+    {
+        title: 'Atendé a tus pacientes de forma más simple',
+        description:
+            'Organizá tu agenda, enviá recordatorios automáticos y mejorá la experiencia de cada paciente.'
+    },
+    {
+        title: 'Hacé seguimiento del progreso de tus pacientes',
+        description:
+            'Visualizá la evolución de cada paciente con registros actualizados y reportes automáticos.'
+    },
+    {
+        title: 'Planes nutricionales en segundos',
+        description:
+            'Generá planes personalizados con cálculos automáticos de calorías, macronutrientes y porciones según cada caso.'
+    }
+]
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+    title='numari'
+    description='numari'
+>
+    <SectionImgRight img='img-1.png'>
+        <div class='flex flex-col items-start gap-8'>
+            <div class='flex flex-col items-center gap-4'>
+                <h1
+                    class='leading-none text-3xl md:text-5xl font-bold text-gray-700'
+                >
+                    La forma más <span
+                        class='text-transparent bg-gradient-to-r from-[#267CFD] from-5% via-[#D1EBFF] via-30% to-[#2A69FD] to-55% bg-clip-text'
+                        >Facil de gestionar</span
+                    > tu consulta nutricional
+                </h1>
+
+                <p class='text-gray-500 text-xs md:text-base'>
+                    Olvidate de la burocracia y los registros manuales. Con
+                    Numari. organizá turnos, historias clínicas y planes
+                    nutricionales en un solo lugar.
+                </p>
+            </div>
+
+            <div class='flex flex-flex md:flex-row items-start gap-4'>
+                <Button
+                    type='primary'
+                    text='Probá gratis'
+                />
+                <Button
+                    type='secondary'
+                    text='Descubrir más'
+                />
+            </div>
+        </div>
+    </SectionImgRight>
+    <SectionImgLeft
+        img='img-2.png'
+        bg='bg-gray-100'
+    >
+        <div class='flex flex-col gap-12'>
+            {
+                nutriOptions.map(nutri => (
+                    <div class='flex gap-4 items-start'>
+                        <div class='size-5 md:size-8 rounded-full bg-gray-200 flex-shrink-0 mt-1' />
+                        <div class='flex flex-col gap-2'>
+                            <h1 class='text-gray-900 text-base md:text-xl font-bold'>
+                                {nutri.title}
+                            </h1>
+                            <p class='text-gray-500 text-xs md:text-base'>
+                                {nutri.description}
+                            </p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </SectionImgLeft>
+    <SectionImgRight img='img-3.png'>
+        <div class="flex flex-col gap-8 items-start">
+			<h1 class="text-gray-900 leading-tight text-3xl md:text-4xl font-extrabold flex flex-col">
+				<span>Armá planes</span>
+				<span>nutricionales en minutos</span>
+			  </h1>
+
+			<p class="text-gray-500 text-lg font-normal">Cargá los datos de tu paciente y generá un plan nutricional completo en segundos. Fácil, rápido y sin complicaciones.</p>
+
+			<Button type='primary' text='Probar ahora' />
+
+		</div>
+    </SectionImgRight>
+	<SectionImgLeft img='img-4.png'>
+		<h1 class="leading-tight text-3xl md:text-4xl font-extrabold">Toda la información de tus pacientes en un solo lugar</h1>
+		<p class="text-gray-500 md:text-lg text-xs">Unificá historias clínicas, planes de alimentación y evolución en una plataforma intuitiva.</p>
+	</SectionImgLeft>
+	<div class="flex flex-col gap-16 items-center bg-gray-50 px-4 md:px-44 py-6 md:py-24">
+		<div class="flex flex-col gap-4 items-center">
+			<h1 class="text-gray-900 leading-tight text-3xl md:text-4xl font-extrabold">Digitalizá tu consulta y ahorrá tiempo</h1>
+			<p class="text-gray-500 text-xs md:text-xl font-normal">Menos papeleo, más enfoque en lo que importa: la salud de tus pacientes.</p>
+		</div>
+		
+
+		<div class="flex items-center gap-4">
+			<div class="flex flex-col items-center text-center gap-4">
+				<div class='size-5 md:size-8 rounded-full bg-gray-200 flex-shrink-0 mt-1' />
+
+				<h1 class="text-xl md:text-2xl font-bold text-gray-900">Accedé al historial de cada paciente</h1>
+
+				<p class="text-gray-500 text-xs md:text-xl font-normal">Guardá datos clínicos, dietas y recomendaciones sin depender de papeles o planillas.</p>
+			</div>
+
+			<div class="h-40 border-r border-gray-300"></div>
+			<div class="flex flex-col items-center text-center gap-4">
+				<div class='size-5 md:size-8 rounded-full bg-gray-200 flex-shrink-0 mt-1' />
+
+				<h1 class="text-xl md:text-2xl font-bold text-gray-900">Automatizá cálculos y recomendaciones</h1>
+
+				<p class="text-gray-500 text-xs md:text-xl font-normal">Dejá que Numari haga los cálculos por vos y optimizá el seguimiento nutricional.</p>
+			</div>
+
+		</div>
+	</div>
+	<div class="flex flex-col items-center text-center bg-[#267CFD] text-white py-24 px-20 gap-6">
+		<h1 class="leading-tight text-3xl font-bold md:text-4xl md:font-extrabold">Tu consulta, más eficiente y digital</h1>
+		<p class="text-xs md:text-xl font-normal">Dale un upgrade a tu práctica con una herramienta diseñada para nutricionistas y profesionales de la salud.</p>
+		<Button type='secondary' text='Probar gratis' />
+	</div>
+	<div class="flex flex-col bg-[#E5ECED] py-24 px-20 gap-10">
+		<div class="flex items-center justify-between gap-4">
+			<img src="logo.svg" alt="logo-numari" class="max-w-36 h-12 ">
+			<ul class="flex gap-6 text-xs md:text-base font-normal cursor-pointer ">
+				<li class="hover:text-[#267CFD]">¿Cómo funciona?</li>
+				<li class="hover:text-[#267CFD]">Soy nutricionista</li>
+				<li class="hover:text-[#267CFD]">Términos y condiciones</li>
+				<li class="hover:text-[#267CFD]">Políticas de privacidad</li>
+			</ul>
+
+		</div>
+		<div class="w-full h-px bg-gray-300"></div>
+
+		<div class="flex items-center justify-between">
+		 <p>© 2025 numari</p>
+		 <p class="flex items-center gap-4"><span>X</span> <span>F</span></p>
+		</div>
+
+	</div>
 </Layout>
