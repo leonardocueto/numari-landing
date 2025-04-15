@@ -8,17 +8,20 @@ const nutriOptions = [
     {
         title: 'Atendé a tus pacientes de forma más simple',
         description:
-            'Organizá tu agenda, enviá recordatorios automáticos y mejorá la experiencia de cada paciente.'
+            'Organizá tu agenda, enviá recordatorios automáticos y mejorá la experiencia de cada paciente.',
+        img: 'heart.svg'
     },
     {
         title: 'Hacé seguimiento del progreso de tus pacientes',
         description:
-            'Visualizá la evolución de cada paciente con registros actualizados y reportes automáticos.'
+            'Visualizá la evolución de cada paciente con registros actualizados y reportes automáticos.',
+         img: 'filechart.svg'
     },
     {
         title: 'Planes nutricionales en segundos',
         description:
-            'Generá planes personalizados con cálculos automáticos de calorías, macronutrientes y porciones según cada caso.'
+            'Generá planes personalizados con cálculos automáticos de calorías, macronutrientes y porciones según cada caso.',
+             img: 'magicwand.svg'
     }
 ]
 ---
@@ -62,11 +65,13 @@ const nutriOptions = [
         img='img-2.png'
         bg='bg-gray-100'
     >
-        <div class='flex flex-col gap-12'>
+        <div class='flex flex-col gap-6 md:gap-12'>
             {
                 nutriOptions.map(nutri => (
                     <div class='flex gap-4 items-start'>
-                        <div class='size-5 md:size-8 rounded-full bg-gray-200 flex-shrink-0 mt-1' />
+                        <div class='flex items-center justify-center size-5 md:size-8 rounded-full bg-gray-200 flex-shrink-0 mt-1'> 
+                            <img src={nutri.img} alt={`img-${nutri.img}`} class="w-3 md:w-4">
+                        </div>
                         <div class='flex flex-col gap-2'>
                             <h1 class='text-gray-900 text-base md:text-xl font-bold'>
                                 {nutri.title}
@@ -104,9 +109,11 @@ const nutriOptions = [
 		</div>
 		
 
-		<div class="flex items-center gap-4">
+		<div class="flex items-start md:items-center gap-4">
 			<div class="flex flex-col items-center text-center gap-4">
-				<div class='size-5 md:size-8 rounded-full bg-gray-200 flex-shrink-0 mt-1' />
+				<div class='flex items-center justify-center size-5 md:size-8 rounded-full bg-gray-200 flex-shrink-0 mt-1'> 
+                    <img src="check.svg" alt={`img-check`} class="w-3 md:w-4.5">
+                </div>
 
 				<h1 class="text-xl md:text-2xl font-bold text-gray-900">Accedé al historial de cada paciente</h1>
 
@@ -115,7 +122,9 @@ const nutriOptions = [
 
 			<div class="h-40 border-r border-gray-300"></div>
 			<div class="flex flex-col items-center text-center gap-4">
-				<div class='size-5 md:size-8 rounded-full bg-gray-200 flex-shrink-0 mt-1' />
+				<div class='flex items-center justify-center size-5 md:size-8 rounded-full bg-gray-200 flex-shrink-0 mt-1'> 
+                    <img src="clipboard.svg" alt={`img-clip`} class="w-3 md:w-4.5">
+                </div>
 
 				<h1 class="text-xl md:text-2xl font-bold text-gray-900">Automatizá cálculos y recomendaciones</h1>
 
@@ -129,9 +138,9 @@ const nutriOptions = [
 		<p class="text-xs md:text-xl font-normal">Dale un upgrade a tu práctica con una herramienta diseñada para nutricionistas y profesionales de la salud.</p>
 		<Button type='secondary' text='Probar gratis' />
 	</div>
-	<div class="flex flex-col bg-[#E5ECED] py-24 px-20 gap-10">
+	<div class="flex flex-col bg-[#E5ECED] py-24 px-4 md:px-20 gap-10">
 		<div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
-			<img src="logo.svg" alt="logo-numari" class="max-w-36 h-12 ">
+			<img src="logo.svg" alt="logo-numari" class="max-w-36 ">
 			<ul class="flex items-center text-center md:text-left gap-6 text-xs md:text-base font-normal cursor-pointer ">
 				<li class="hover:text-[#267CFD]">¿Cómo funciona?</li>
 				<li class="hover:text-[#267CFD]">Soy nutricionista</li>
@@ -144,7 +153,10 @@ const nutriOptions = [
 
 		<div class="flex items-center justify-between">
 		 <p>© 2025 numari</p>
-		 <p class="flex items-center gap-4"><span>X</span> <span>F</span></p>
+		 <div class="flex items-center gap-4">
+            <img src="F.svg" alt="facebook" class="cursor-pointer">
+            <img src="X.svg" alt="twitter" class="cursor-pointer">
+         </div>
 		</div>
 
 	</div>
