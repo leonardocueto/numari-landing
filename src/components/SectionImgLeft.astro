@@ -7,7 +7,7 @@ export interface Props {
 const { bg = '', img } = Astro.props;
 ---
 
-<section class={`${bg} flex flex-col-reverse md:flex-row items-center gap-8 md:justify-between px-4 md:px-44 py-6 md:py-24`}>
+<section class={`${bg} flex flex-col-reverse md:flex-row items-center gap-8 md:justify-evenly px-4 md:px-72 py-6 md:py-24`}>
   <img 
     src={img} 
     alt={`foto ${img}`} 
