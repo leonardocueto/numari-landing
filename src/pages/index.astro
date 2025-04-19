@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro'
 import SectionImgRight from '../components/SectionImgRight.astro'
 import SectionImgLeft from '../components/SectionImgLeft.astro'
 import Button from '../components/Button.astro'
+import Instagram from '../components/icons/Instagram.astro'
+import Linkedin from '../components/icons/Linkedin.astro'
 
 const nutriOptions = [
     {
@@ -38,7 +40,7 @@ const nutriOptions = [
                 >
                     La forma más <span
                         class='text-transparent bg-gradient-to-r from-[#267CFD] from-5% via-[#D1EBFF] via-30% to-[#2A69FD] to-55% bg-clip-text'
-                        >Facil de gestionar</span
+                        >fácil de gestionar</span
                     > tu consulta nutricional
                 </h1>
 
@@ -54,10 +56,10 @@ const nutriOptions = [
                     type='primary'
                     text='Probá gratis'
                 />
-                <Button
+                <!-- <Button
                     type='secondary'
                     text='Descubrir más'
-                />
+                /> -->
             </div>
         </div>
     </SectionImgRight>
@@ -154,8 +156,13 @@ const nutriOptions = [
 		<div class="flex items-center justify-between">
 		 <p>© 2025 numari</p>
 		 <div class="flex items-center gap-4">
-            <img src="F.svg" alt="facebook" class="cursor-pointer">
-            <img src="X.svg" alt="twitter" class="cursor-pointer">
+            <a href="https://www.instagram.com/numari.app/" target="_blank" rel="noopener noreferrer" class="cursor-pointer">
+                <Instagram widht="30" height="30" color="gray" />
+            </a>
+            <a href="https://www.instagram.com/numari.app/" target="_blank" rel="noopener noreferrer" class="cursor-pointer">
+                <Linkedin widht="30" height="30" color="gray" />
+            </a>
+            
          </div>
 		</div>
 

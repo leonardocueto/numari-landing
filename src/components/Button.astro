@@ -1,16 +1,40 @@
 ---
 export interface Props {
-    type?: "primary" | "secondary"
+    type?: "primary" | "secondary";
     text: string;
-    disabled?: boolean
-
+    disabled?: boolean;
+    href?: string;
+    target?: "_blank" | "_self";
 }
-const { type = 'primary', text, disabled  = false } = Astro.props;
 
-const baseClasses = "rounded-lg py-2.5 px-5 hover:cursor-pointer transition-colors ";
+const { 
+    type = 'primary', 
+    text, 
+    disabled = false,
+    href = "https://forms.gle/s75NWAz16ZdsNooj7",
+    target = "_blank"
+} = Astro.props;
+
+const baseClasses = "rounded-lg py-2.5 px-5 hover:cursor-pointer transition-colors inline-block text-center cursor-pointer";
 const primaryClasses = "text-white bg-blue-600 hover:bg-blue-500 disabled:bg-blue-300";
-const secondaryClasses = "border border-gray-200 bg-white text-gray-900  hover:bg-gray-50 disabled:opacity-50";
-
+const secondaryClasses = "border border-gray-200 bg-white text-gray-900 hover:bg-gray-50 disabled:opacity-50";
 ---
 
-<button class={`${baseClasses} ${type === 'primary' ? primaryClasses : secondaryClasses}`} disabled={disabled}>{text}</button>
+{href ? (
+    <a 
+        href={href}
+        target={target}
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
+        class={`${baseClasses} ${type === 'primary' ? primaryClasses : secondaryClasses}`}
+        aria-disabled={disabled}
+    >
+        {text}
+    </a>
+) : (
+    <button 
+        class={`${baseClasses} ${type === 'primary' ? primaryClasses : secondaryClasses}`} 
+        disabled={disabled}
+    >
+        {text}
+    </button>
+)}
