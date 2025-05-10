@@ -63,5 +63,5 @@ Numari.createPlan({
 
 ¿Tienes preguntas? ¡Contáctanos!
 
--   📧 Correo: [soporte@numari.com](mailto:soporte@numari.com)
--   🌐 Sitio web: [www.numari.com](https://www.numari.com)
+-   📧 Correo: [soporte@numari.app](mailto:soporte@numari.app)
+-   🌐 Sitio web: [www.numari.app](https://www.numari.app)
